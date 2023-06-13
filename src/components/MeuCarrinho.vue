@@ -1,9 +1,11 @@
-<script>
+<script setup>
 import {
   carrinho,
   removerItemCarrinho,
   atualizaQuantidadeItem
 } from '@/_data/carrinho.js'
+
+import MButton from './MButton.vue';
 
 import { formatarPreco } from '../helpers/format';
 </script>
@@ -41,7 +43,63 @@ import { formatarPreco } from '../helpers/format';
             </div>
           </div>
         </div>
+        <MButton text="Limpar carrinho"/>
+        <MButton text="Fechar compra"/>
+        <MButton text="Continuar comprando"/>
+        <MButton text="Salvar para compra"/>
         <p class="carrinho-total">Total: {{ formatarPreco(carrinho.total) }}</p>
       </div>
     </div>
 </template>
+
+<style scoped>
+.wrap-carrinho .carrinho-total {
+  position: fixed;
+  bottom: 3%;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.item-carrinho .info-livro {
+  display: flex;
+  margin-bottom: 10px;
+}
+.detalhes-livro {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.detalhes-livro p {
+  margin: 0;
+}
+.detalhes-livro div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.detalhes-livro input[type='number'] {
+  width: 50px;
+  text-align: start;
+  border: none;
+  margin-left: 10px;
+}
+
+.detalhes-livro button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: black;
+  padding: 0;
+  margin: 0;
+}
+
+.info-livro-preco {
+  margin-left: auto;
+}
+.icon-capa-livro {
+  width: 30px;
+  margin-right: 10px;
+}
+</style>
