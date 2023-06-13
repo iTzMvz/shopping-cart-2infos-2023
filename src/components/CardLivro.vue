@@ -2,12 +2,9 @@
 import { adicionarAoCarrinho } from '@/_data/carrinho.js'
 
 const props = defineProps({
-    livro: Object
+  livro: Object
 })
-
-function formatarPreco(preco) {
-  return 'R$ ' + preco.toFixed(2).replace('.', ',')
-}
+import { formatarPreco } from '../helpers/format';
 </script>
 
 <template>
