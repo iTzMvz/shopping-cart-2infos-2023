@@ -71,9 +71,6 @@ import CardLivro from '@/components/CardLivro.vue';
   grid-template-columns: 3fr 1fr;
 }
 
-.carrinho {
-  /* min-width: 20%; */
-}
 .listagem-livros {
   display: flex;
   flex-wrap: wrap;
